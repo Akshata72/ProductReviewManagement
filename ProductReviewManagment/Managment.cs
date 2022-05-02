@@ -50,5 +50,16 @@ namespace ProductReviewManagment
 
             }
         }
+
+        //UC5-Management - Retrieve only productId and review from the list for all records.
+        public void RetrieveProductIDAndReview(List<ProductReview> listProductReview)
+        {
+            var RecordedData = listProductReview.Select(x => new { ProductID = x.ProductID, Review = x.Review });
+            Console.WriteLine("Product ID with Review: ");
+            foreach(var list in RecordedData)
+            {
+                Console.WriteLine("ProductID: " + list.ProductID + "====> " + list.Review);
+            }
+        }
     }
 }
