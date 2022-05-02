@@ -43,9 +43,31 @@ namespace ProductReviewManagment
             };
             foreach(var list in productReviewsList)
             {
-                Console.WriteLine("\nProductID: " +list.ProductID+ " UserID: " +list.UserID+ " Rating: " +list.Rating+ " Review: "+list.Review+ " IsLike: " +list.IsLike);
+                Console.WriteLine("ProductID:- " + list.ProductID + " " + "UserID:- " + list.UserID
+                    + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.IsLike);
             }
-            Console.ReadLine();
+            int Option = 0;
+            do
+            {
+                Managment managment = new Managment();
+                Console.WriteLine("\nEnter 1 for Top 3 records: ");
+                Console.WriteLine("\nEnter 0 Exit: ");
+                try
+                {
+                    Option = int.Parse(Console.ReadLine());
+                    switch (Option)
+                    {
+                        case 1:
+                            Console.WriteLine("\nFollowing are the top 3 records from the list who’s rating is high:\n");
+                            managment.TopRecords(productReviewsList);
+                            break;
+                    }
+                }
+                 catch(Exception)
+                {
+                    Console.WriteLine("Choose Correct Option...");
+                }
+            } while (Option != 0);
         }
     }
 }
