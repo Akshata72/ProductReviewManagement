@@ -53,6 +53,7 @@ namespace ProductReviewManagment
                 Console.WriteLine("Enter 2 for Rating greater than 3 with product id of 1,4,or 9:");
                 Console.WriteLine("Enter 3 for Count Records:");
                 Console.WriteLine("Enter 4 for Review with ProductID:");
+                Console.WriteLine("Enter 5 for skiping top 5 records:");
                 Console.WriteLine("Enter 0 Exit: ");
 
                 try
@@ -72,6 +73,9 @@ namespace ProductReviewManagment
                             break;
                         case 4:
                             managment.RetrieveProductIDAndReview(productReviewsList);
+                            break;
+                        case 5:
+                            managment.Skip5Records(productReviewsList);
                             break;
                     }
                 }
