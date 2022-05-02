@@ -19,16 +19,16 @@ namespace ProductReviewManagment
                 new ProductReview() { ProductID = 3, UserID = 1, Rating = 5, Review = "Good", IsLike = true },
                 new ProductReview() { ProductID = 4, UserID = 1, Rating = 6, Review = "Good", IsLike = false },
                 new ProductReview() { ProductID = 5, UserID = 1, Rating = 2, Review = "nice", IsLike = true },
-                new ProductReview() { ProductID = 6, UserID = 1, Rating = 1, Review = "bad", IsLike = true },
+                new ProductReview() { ProductID = 5, UserID = 1, Rating = 1, Review = "bad", IsLike = true },
                 new ProductReview() { ProductID = 7, UserID = 1, Rating = 1, Review = "Good", IsLike = false },
                 new ProductReview() { ProductID = 8, UserID = 1, Rating = 9, Review = "nice", IsLike = true },
-                new ProductReview() { ProductID = 9, UserID = 1, Rating = 2, Review = "bad", IsLike = true },
+                new ProductReview() { ProductID = 8, UserID = 1, Rating = 2, Review = "bad", IsLike = true },
                 new ProductReview() { ProductID = 10, UserID = 1, Rating = 8, Review = "nice", IsLike = true },
                 new ProductReview() { ProductID = 11, UserID = 1, Rating = 3, Review = "nice", IsLike = true },
                 new ProductReview() { ProductID = 12, UserID = 1, Rating = 2, Review = "Good", IsLike = true },
                 new ProductReview() { ProductID = 13, UserID = 1, Rating = 4, Review = "Good", IsLike = true },
                 new ProductReview() { ProductID = 14, UserID = 1, Rating = 5, Review = "Good", IsLike = true },
-                new ProductReview() { ProductID = 15, UserID = 1, Rating = 6, Review = "Good", IsLike = false },
+                new ProductReview() { ProductID = 14, UserID = 1, Rating = 6, Review = "Good", IsLike = false },
                 new ProductReview() { ProductID = 16, UserID = 1, Rating = 2, Review = "nice", IsLike = true },
                 new ProductReview() { ProductID = 17, UserID = 1, Rating = 1, Review = "bad", IsLike = true },
                 new ProductReview() { ProductID = 18, UserID = 1, Rating = 2, Review = "bad", IsLike = true },
@@ -51,6 +51,7 @@ namespace ProductReviewManagment
                 Managment managment = new Managment();
                 Console.WriteLine("\nEnter 1 for Top 3 records: ");
                 Console.WriteLine("Enter 2 for Rating greater than 3 with product id of 1,4,or 9:");
+                Console.WriteLine("Enter 3 for Count Records:");
                 Console.WriteLine("Enter 0 Exit: ");
 
                 try
@@ -64,6 +65,9 @@ namespace ProductReviewManagment
                             break;
                         case 2:
                             managment.SelectedRecord(productReviewsList);
+                            break;
+                        case 3:
+                            managment.CountRecords(productReviewsList);
                             break;
                     }
                 }
