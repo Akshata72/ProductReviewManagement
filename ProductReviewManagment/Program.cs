@@ -19,27 +19,26 @@ namespace ProductReviewManagment
                 new ProductReview() { ProductID = 3, UserID = 1, Rating = 5, Review = "Good", IsLike = true },
                 new ProductReview() { ProductID = 4, UserID = 1, Rating = 6, Review = "Good", IsLike = false },
                 new ProductReview() { ProductID = 5, UserID = 1, Rating = 2, Review = "nice", IsLike = true },
-                new ProductReview() { ProductID = 6, UserID = 1, Rating = 1, Review = "bas", IsLike = true },
-                new ProductReview() { ProductID = 8, UserID = 1, Rating = 1, Review = "Good", IsLike = false },
+                new ProductReview() { ProductID = 6, UserID = 1, Rating = 1, Review = "bad", IsLike = true },
+                new ProductReview() { ProductID = 7, UserID = 1, Rating = 1, Review = "Good", IsLike = false },
                 new ProductReview() { ProductID = 8, UserID = 1, Rating = 9, Review = "nice", IsLike = true },
-                new ProductReview() { ProductID = 2, UserID = 1, Rating = 10, Review = "nice", IsLike = true },
+                new ProductReview() { ProductID = 9, UserID = 1, Rating = 2, Review = "bad", IsLike = true },
                 new ProductReview() { ProductID = 10, UserID = 1, Rating = 8, Review = "nice", IsLike = true },
                 new ProductReview() { ProductID = 11, UserID = 1, Rating = 3, Review = "nice", IsLike = true },
                 new ProductReview() { ProductID = 12, UserID = 1, Rating = 2, Review = "Good", IsLike = true },
-                new ProductReview() { ProductID = 12, UserID = 1, Rating = 4, Review = "Good", IsLike = true },
-                new ProductReview() { ProductID = 13, UserID = 1, Rating = 5, Review = "Good", IsLike = true },
-                new ProductReview() { ProductID = 14, UserID = 1, Rating = 6, Review = "Good", IsLike = false },
-                new ProductReview() { ProductID = 15, UserID = 1, Rating = 2, Review = "nice", IsLike = true },
-                new ProductReview() { ProductID = 15, UserID = 1, Rating = 1, Review = "bad", IsLike = true },
-                new ProductReview() { ProductID = 15, UserID = 1, Rating = 2, Review = "bad", IsLike = true },
-                new ProductReview() { ProductID = 15, UserID = 1, Rating = 1, Review = "Good", IsLike = false },
-                new ProductReview() { ProductID = 18, UserID = 1, Rating = 9, Review = "nice", IsLike = true },
-                new ProductReview() { ProductID = 19, UserID = 1, Rating = 10, Review = "nice", IsLike = true },
-                new ProductReview() { ProductID = 20, UserID = 1, Rating = 8, Review = "nice", IsLike = true },
-                new ProductReview() { ProductID = 21, UserID = 1, Rating = 3, Review = "nice", IsLike = true },
-                new ProductReview() { ProductID = 22, UserID = 1, Rating = 10, Review = "nice", IsLike = true },
+                new ProductReview() { ProductID = 13, UserID = 1, Rating = 4, Review = "Good", IsLike = true },
+                new ProductReview() { ProductID = 14, UserID = 1, Rating = 5, Review = "Good", IsLike = true },
+                new ProductReview() { ProductID = 15, UserID = 1, Rating = 6, Review = "Good", IsLike = false },
+                new ProductReview() { ProductID = 16, UserID = 1, Rating = 2, Review = "nice", IsLike = true },
+                new ProductReview() { ProductID = 17, UserID = 1, Rating = 1, Review = "bad", IsLike = true },
+                new ProductReview() { ProductID = 18, UserID = 1, Rating = 2, Review = "bad", IsLike = true },
+                new ProductReview() { ProductID = 19, UserID = 1, Rating = 1, Review = "Good", IsLike = false },
+                new ProductReview() { ProductID = 20, UserID = 1, Rating = 9, Review = "nice", IsLike = true },
+                new ProductReview() { ProductID = 21, UserID = 1, Rating = 10, Review = "nice", IsLike = true },
                 new ProductReview() { ProductID = 22, UserID = 1, Rating = 8, Review = "nice", IsLike = true },
-                new ProductReview() { ProductID = 25, UserID = 1, Rating = 3, Review = "nice", IsLike = true }
+                new ProductReview() { ProductID = 23, UserID = 1, Rating = 3, Review = "nice", IsLike = true },
+                new ProductReview() { ProductID = 24, UserID = 1, Rating = 10, Review = "nice", IsLike = true },
+                new ProductReview() { ProductID = 25, UserID = 1, Rating = 8, Review = "nice", IsLike = true }
             };
             foreach(var list in productReviewsList)
             {
@@ -51,7 +50,9 @@ namespace ProductReviewManagment
             {
                 Managment managment = new Managment();
                 Console.WriteLine("\nEnter 1 for Top 3 records: ");
-                Console.WriteLine("\nEnter 0 Exit: ");
+                Console.WriteLine("Enter 2 for Rating greater than 3 with product id of 1,4,or 9:");
+                Console.WriteLine("Enter 0 Exit: ");
+
                 try
                 {
                     Option = int.Parse(Console.ReadLine());
@@ -60,6 +61,9 @@ namespace ProductReviewManagment
                         case 1:
                             Console.WriteLine("\nFollowing are the top 3 records from the list who’s rating is high:\n");
                             managment.TopRecords(productReviewsList);
+                            break;
+                        case 2:
+                            managment.SelectedRecord(productReviewsList);
                             break;
                     }
                 }

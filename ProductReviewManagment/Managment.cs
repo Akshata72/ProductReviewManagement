@@ -23,5 +23,20 @@ namespace ProductReviewManagment
                     + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.IsLike);
             }
         }
+
+        //UC3-Retrieve all record from the list who’s rating are greater then 3 and productID is 1 or 4 or 9 using LINQ
+        public void SelectedRecord(List<ProductReview> listProductReview)
+        {
+            var RecordedData = (from productReview in listProductReview
+                                where (productReview.ProductID == 1 || productReview.ProductID == 4 || productReview.ProductID == 9)
+                                && productReview.Rating > 3
+                                select productReview);
+            Console.WriteLine("Rating greater than 3 with product id of 1,4,or 9: \n");
+            foreach (var list in RecordedData)
+            {
+                Console.WriteLine("ProductID:- " + list.ProductID + " " + "UserID:- " + list.UserID
+                   + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.IsLike);
+            }
+        }
     }
 }
