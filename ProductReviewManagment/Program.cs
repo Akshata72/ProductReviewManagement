@@ -19,20 +19,20 @@ namespace ProductReviewManagment
                 new ProductReview() { ProductID = 3, UserID = 1, Rating = 5, Review = "Good", IsLike = true },
                 new ProductReview() { ProductID = 4, UserID = 1, Rating = 6, Review = "Good", IsLike = false },
                 new ProductReview() { ProductID = 5, UserID = 1, Rating = 2, Review = "nice", IsLike = true },
-                new ProductReview() { ProductID = 5, UserID = 1, Rating = 1, Review = "bad", IsLike = true },
+                new ProductReview() { ProductID = 10, UserID = 1, Rating = 1, Review = "bad", IsLike = true },
                 new ProductReview() { ProductID = 7, UserID = 1, Rating = 1, Review = "Good", IsLike = false },
                 new ProductReview() { ProductID = 8, UserID = 1, Rating = 9, Review = "nice", IsLike = true },
                 new ProductReview() { ProductID = 8, UserID = 1, Rating = 2, Review = "bad", IsLike = true },
                 new ProductReview() { ProductID = 10, UserID = 1, Rating = 8, Review = "nice", IsLike = true },
                 new ProductReview() { ProductID = 11, UserID = 1, Rating = 3, Review = "nice", IsLike = true },
                 new ProductReview() { ProductID = 12, UserID = 1, Rating = 2, Review = "Good", IsLike = true },
-                new ProductReview() { ProductID = 13, UserID = 1, Rating = 4, Review = "Good", IsLike = true },
+                new ProductReview() { ProductID = 10, UserID = 1, Rating = 4, Review = "Good", IsLike = true },
                 new ProductReview() { ProductID = 14, UserID = 1, Rating = 5, Review = "Good", IsLike = true },
                 new ProductReview() { ProductID = 14, UserID = 1, Rating = 6, Review = "Good", IsLike = false },
-                new ProductReview() { ProductID = 16, UserID = 1, Rating = 2, Review = "nice", IsLike = true },
+                new ProductReview() { ProductID = 10, UserID = 1, Rating = 2, Review = "nice", IsLike = true },
                 new ProductReview() { ProductID = 17, UserID = 1, Rating = 1, Review = "bad", IsLike = true },
                 new ProductReview() { ProductID = 18, UserID = 1, Rating = 2, Review = "bad", IsLike = true },
-                new ProductReview() { ProductID = 19, UserID = 1, Rating = 1, Review = "Good", IsLike = false },
+                new ProductReview() { ProductID = 10, UserID = 1, Rating = 1, Review = "Good", IsLike = false },
                 new ProductReview() { ProductID = 20, UserID = 1, Rating = 9, Review = "nice", IsLike = true },
                 new ProductReview() { ProductID = 21, UserID = 1, Rating = 10, Review = "nice", IsLike = true },
                 new ProductReview() { ProductID = 22, UserID = 1, Rating = 8, Review = "nice", IsLike = true },
@@ -59,6 +59,7 @@ namespace ProductReviewManagment
                 Console.WriteLine("Enter 7 for who’s isLike value is true:");
                 Console.WriteLine("Enter 8 for average rating of the each productId:");
                 Console.WriteLine("Enter 9 for who’s review message contain nice");
+                Console.WriteLine("Enter 10 for who’s Userid = 10 and order by rating");
                 Console.WriteLine("Enter 0 Exit: ");
 
                 try
@@ -93,6 +94,9 @@ namespace ProductReviewManagment
                                 break;
                         case 9:
                             managment.ReviewMassageShouldbeNice(productReviewsList);
+                            break;
+                        case 10:
+                            managment.ProductIdIs10(productReviewsList);
                             break;
                     }
                 }

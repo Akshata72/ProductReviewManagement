@@ -110,5 +110,20 @@ namespace ProductReviewManagment
                     + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.IsLike);
             }
         }
+
+        //UC11-Retreive all records from the list who’s Userid = 10 and order by rating
+        public void ProductIdIs10(List<ProductReview> listProductReview)
+        {
+            var RecordedData = (from productReviwes in listProductReview
+                                where (productReviwes.ProductID == 10)
+                                orderby productReviwes.Rating ascending
+                                select productReviwes);
+
+            foreach (var list in RecordedData)
+            {
+                Console.WriteLine("ProductID:- " + list.ProductID + " " + "UserID:- " + list.UserID
+                    + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.IsLike);
+            }
+        }
     }
 }
