@@ -39,7 +39,7 @@ namespace ProductReviewManagment
             }
         }
 
-        //UC4-
+        //UC4-Retrieve only productId and review from the list for all records using LINQ select operator.
         public void CountRecords(List<ProductReview> listProductReview)
         {
             var RecordedData =listProductReview.GroupBy(x => x.ProductID).Select(x => new { ProductID = x.Key, Count = x.Count() });
