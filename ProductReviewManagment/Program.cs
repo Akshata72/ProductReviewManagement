@@ -58,6 +58,7 @@ namespace ProductReviewManagment
                 Console.WriteLine("Enter 6 for Creating DataTable:");
                 Console.WriteLine("Enter 7 for who’s isLike value is true:");
                 Console.WriteLine("Enter 8 for average rating of the each productId:");
+                Console.WriteLine("Enter 9 for who’s review message contain nice");
                 Console.WriteLine("Enter 0 Exit: ");
 
                 try
@@ -90,6 +91,9 @@ namespace ProductReviewManagment
                         case 8:
                             managment.AvrageRating(productReviewsList);
                                 break;
+                        case 9:
+                            managment.ReviewMassageShouldbeNice(productReviewsList);
+                            break;
                     }
                 }
                  catch(Exception)

@@ -97,5 +97,18 @@ namespace ProductReviewManagment
                 Console.WriteLine(list);
             }            
         }
+
+        //UC10-Retreive all records from the list who’s review message contain “nice”
+        public void ReviewMassageShouldbeNice(List<ProductReview> listProductReview)
+        {
+            var RecordedData = (from productReview in listProductReview
+                                where (productReview.Review == "nice")
+                                select productReview);
+            foreach (var list in RecordedData)
+            {
+                Console.WriteLine("ProductID:- " + list.ProductID + " " + "UserID:- " + list.UserID
+                    + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.IsLike);
+            }
+        }
     }
 }
