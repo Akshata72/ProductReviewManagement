@@ -73,5 +73,18 @@ namespace ProductReviewManagment
                     + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.IsLike);
             }
         }
+
+        //UC8-Retrieve all the records from the datatable variable who’s isLike value is true using LINQ
+        public void ISLikeValuetrue(List<ProductReview> listProductReview)
+        {
+            var RecordedData = (from productReview in listProductReview
+                                where (productReview.IsLike == true)
+                                select productReview);
+            foreach (var list in RecordedData)
+            {
+                Console.WriteLine("ProductID:- " + list.ProductID + " " + "UserID:- " + list.UserID
+                    + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.IsLike);
+            }
+        }
     }
 }
