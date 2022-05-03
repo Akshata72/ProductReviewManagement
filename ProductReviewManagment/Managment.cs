@@ -86,5 +86,16 @@ namespace ProductReviewManagment
                     + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.IsLike);
             }
         }
+
+        //UC9-Find average rating of the each productId using LINQ
+        public void AvrageRating(List<ProductReview> listProductReview)
+        {
+            var RecordedData = (from productReview in listProductReview
+                                group productReview by productReview.ProductID).Select(x => x.Average(a => a.Rating));
+            foreach(var list in RecordedData)
+            {
+                Console.WriteLine(list);
+            }            
+        }
     }
 }

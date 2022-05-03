@@ -57,6 +57,7 @@ namespace ProductReviewManagment
                 Console.WriteLine("Enter 5 for skiping top 5 records:");
                 Console.WriteLine("Enter 6 for Creating DataTable:");
                 Console.WriteLine("Enter 7 for who’s isLike value is true:");
+                Console.WriteLine("Enter 8 for average rating of the each productId:");
                 Console.WriteLine("Enter 0 Exit: ");
 
                 try
@@ -86,6 +87,9 @@ namespace ProductReviewManagment
                         case 7:
                             managment.ISLikeValuetrue(productReviewsList);
                             break;
+                        case 8:
+                            managment.AvrageRating(productReviewsList);
+                                break;
                     }
                 }
                  catch(Exception)
